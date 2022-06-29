@@ -1,0 +1,5 @@
+{
+  "extends": "tsconfig/mobile.json",
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}

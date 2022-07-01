@@ -1,9 +1,8 @@
 import * as React from "react";
-import { render, screen } from "@testing-library/react";
-
+import { render } from "@testing-library/react-native";
 import { NativeBaseProvider } from "native-base";
 
-import Text from "./Text";
+import Button from "./Button";
 
 const inset = {
   frame: { x: 0, y: 0, width: 0, height: 0 },
@@ -11,13 +10,11 @@ const inset = {
 };
 
 it(`renders correctly`, () => {
-  render(
+  const { getByText } = render(
     <NativeBaseProvider initialWindowMetrics={inset}>
-      <Text />
+      <Button />
     </NativeBaseProvider>
   );
 
-  expect(screen.getByText("Test Text")).toBeDefined();
-  expect(screen.getByText("NativeBaseButton")).toBeDefined();
-  expect(true).toBe(true);
+  expect(getByText("NativeBaseButton")).toBeDefined();
 });

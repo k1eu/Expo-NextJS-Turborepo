@@ -1,47 +1,16 @@
-import { StatusBar } from "expo-status-bar";
-import { View } from "react-native";
-import { SafeAreaProvider } from "react-native-safe-area-context";
-import { Button } from "ui";
+import * as React from "react";
 
-import useCachedResources from "./hooks/useCachedResources";
-import useColorScheme from "./hooks/useColorScheme";
-import Navigation from "./navigation";
+import { View } from "react-native";
+import { Button } from "ui";
+import { Button as NativeBaseButton, NativeBaseProvider } from "native-base";
 
 export default function App() {
-  const isLoadingComplete = useCachedResources();
-  const colorScheme = useColorScheme();
-
-  if (!isLoadingComplete) {
-    return null;
-  } else {
-    return (
-      // <SafeAreaProvider>
-      //   <Button  title="mobileApp"/>
-      //   <Navigation colorScheme={colorScheme} />
-      //   <StatusBar />
-      // </SafeAreaProvider>
+  return (
+    <NativeBaseProvider>
       <View>
-        <Button title="mobileApp" />
-        <Button title="mobileApp" />
-        <Button title="mobileApp" />
-        <Button title="mobileApp" />
-        <Button title="mobileApp" />
-        <Button title="mobileApp" />
-        <Button title="mobileApp" />
-        <Button title="mobileApp" />
-        <Button title="mobileApp" />
-        <Button title="mobileApp" />
-        <Button title="mobileApp" />
-        <Button title="mobileApp" />
-        <Button title="mobileApp" />
-        <Button title="mobileApp" />
-        <Button title="mobileApp" />
-        <Button title="mobileApp" />
-        <Button title="mobileApp" />
-        <Button title="mobileApp" />
-        <Button title="mobileApp" />
-        <Button title="mobileApp" />
+        <Button title="MobileApp" />
+        <NativeBaseButton>MobileAppNativeBase</NativeBaseButton>
       </View>
-    );
-  }
+    </NativeBaseProvider>
+  );
 }

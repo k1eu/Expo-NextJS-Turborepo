@@ -11,13 +11,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "native-base": "^3.4.7",
     "next": "12.0.8",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-native-safe-area-context": "4.2.4",
+    "react-native-svg": "12.3.0",
     "react-native-web": "0.17.7",
     "ui": "*"
   },
   "devDependencies": {
+    "@expo/next-adapter": "^4.0.7",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.5",
     "@types/node": "^17.0.12",
@@ -27,7 +31,9 @@
     "eslint-config-custom": "*",
     "jest": "^26.6.3",
     "jest-environment-jsdom": "^26.6.2",
-    "next-transpile-modules": "9.0.0",
+    "next-compose-plugins": "^2.2.1",
+    "next-fonts": "^1.5.1",
+    "next-transpile-modules": "^9.0.0",
     "tsconfig": "*",
     "typescript": "^4.5.3"
   }

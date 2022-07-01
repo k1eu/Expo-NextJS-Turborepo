@@ -1,11 +1,6 @@
 import * as React from "react";
-
-import { Button } from "ui";
 import { Button as NativeBaseButton } from "native-base";
 
-const Text = () => {
-  // return <Button title="Test Text" />;
+export default function MonoText() {
   return <NativeBaseButton>NativeBaseButton</NativeBaseButton>;
-};
-
-export default Text;
+}

@@ -17,4 +17,5 @@ it(`renders correctly`, () => {
   );
 
   expect(getByText("NativeBaseButton")).toBeDefined();
+  expect(getByText("toggle")).toBeDefined();
 });

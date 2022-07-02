@@ -13,7 +13,7 @@
     "test:w": "jest --watchAll"
   },
   "jest": {
-    "preset": "jest-expo",
+    "preset": "react-native",
     "setupFiles": [
       "./jest-setup.js"
     ],
@@ -39,6 +39,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-native": "0.68.2",
+    "react-native-reanimated": "~2.8.0",
     "react-native-safe-area-context": "4.2.4",
     "react-native-screens": "~3.11.1",
     "react-native-svg": "12.3.0",

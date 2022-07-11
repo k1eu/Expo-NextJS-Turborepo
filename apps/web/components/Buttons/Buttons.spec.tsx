@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 
 import { NativeBaseProvider } from "native-base";
 
-import Text from "./Text";
+import Buttons from "./Buttons";
 
 const inset = {
   frame: { x: 0, y: 0, width: 0, height: 0 },
@@ -13,7 +13,7 @@ const inset = {
 it(`renders correctly`, () => {
   render(
     <NativeBaseProvider initialWindowMetrics={inset}>
-      <Text />
+      <Buttons />
     </NativeBaseProvider>
   );
 

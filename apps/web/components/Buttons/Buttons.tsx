@@ -1,12 +1,14 @@
-import * as React from "react";
 import { Button as NativeBaseButton } from "native-base";
+import * as React from "react";
+import { View } from "react-native";
 import Animated, {
   useSharedValue,
   withTiming,
   useAnimatedStyle,
   Easing,
 } from "react-native-reanimated";
-import { View, Button } from "react-native";
+
+import { Button } from "ui";
 
 const X = (): JSX.Element => {
   const randomWidth = useSharedValue(10);

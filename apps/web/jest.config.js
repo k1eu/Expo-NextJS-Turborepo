@@ -30,8 +30,9 @@ module.exports = {
     "^@/components/(.*)$": "<rootDir>/components/$1",
 
     "^@/pages/(.*)$": "<rootDir>/pages/$1",
+    "^react-native$": "react-native-web",
   },
-  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
+  setupFilesAfterEnv: ["<rootDir>/jest-setup.js"],
   transform: {
     // Use babel-jest to transpile tests with the next/babel preset
     // https://jestjs.io/docs/configuration#transform-objectstring-pathtotransformer--pathtotransformer-object

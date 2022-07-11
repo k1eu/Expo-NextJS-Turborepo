@@ -2,7 +2,7 @@ import React from "react";
 import { NativeBaseProvider } from "native-base";
 
 import { Button } from "./components";
-import { UIButton } from "ui/components";
+import { UIButton } from "ui";
 
 const App = () => {
   return (

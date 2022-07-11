@@ -8,16 +8,14 @@ const withTM = require("next-transpile-modules")([
   "native-base",
   "react-native-svg",
 ]);
-
-const nextConfig = {};
+const path = require("path");
 
 module.exports = withPlugins([
   withTM({
     reactStrictMode: true,
-    webpack: (config) => {
+    webpack: (config, options) => {
       config.resolve.alias = {
         ...(config.resolve.alias || {}),
-        // Transform all direct `react-native` imports to `react-native-web`
         "react-native$": "react-native-web",
       };
       config.resolve.extensions = [
@@ -26,6 +24,13 @@ module.exports = withPlugins([
         ".web.tsx",
         ...config.resolve.extensions,
       ];
+      if (options.isServer) {
+        config.plugins.push(
+          new options.webpack.ProvidePlugin({
+            requestAnimationFrame: path.resolve(__dirname, "./raf.js"),
+          })
+        );
+      }
       return config;
     },
   }),

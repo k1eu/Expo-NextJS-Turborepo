@@ -38,6 +38,7 @@
     "eslint-config-custom": "*",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",
+    "jest-config": "*",
     "jest-environment-jsdom": "^26.6.2",
     "next-compose-plugins": "^2.2.1",
     "next-fonts": "^1.5.1",

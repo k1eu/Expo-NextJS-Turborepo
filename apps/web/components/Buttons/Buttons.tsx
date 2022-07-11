@@ -8,9 +8,9 @@ import Animated, {
   Easing,
 } from "react-native-reanimated";
 
-import { Button } from "ui";
+import { UIButton } from "ui/components";
 
-const X = (): JSX.Element => {
+const Buttons = (): JSX.Element => {
   const randomWidth = useSharedValue(10);
 
   const config = {
@@ -41,7 +41,7 @@ const X = (): JSX.Element => {
             style,
           ]}
         />
-        <Button
+        <UIButton
           title="Test Text"
           onPress={() => {
             randomWidth.value = Math.random() * 350;
@@ -52,4 +52,4 @@ const X = (): JSX.Element => {
   );
 };
 
-export default X;
+export default Buttons;

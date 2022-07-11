@@ -8,7 +8,7 @@ import Animated, {
   Easing,
 } from "react-native-reanimated";
 
-import { UIButton } from "ui/components";
+import { UIButton } from "ui";
 
 const Buttons = (): JSX.Element => {
   const randomWidth = useSharedValue(10);

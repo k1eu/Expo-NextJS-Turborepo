@@ -1,9 +1,19 @@
 import { NativeBaseProvider } from "native-base";
 
+import { TodosProvider } from "shared";
+
 function MyApp({ Component, pageProps }) {
+  const Layout = Component.layout;
+
   return (
     <NativeBaseProvider>
-      <Component {...pageProps} />
+      <TodosProvider>
+        {
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        }
+      </TodosProvider>
     </NativeBaseProvider>
   );
 }

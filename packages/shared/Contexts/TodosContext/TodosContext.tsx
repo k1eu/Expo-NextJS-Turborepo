@@ -1,6 +1,8 @@
 import * as React from "react";
 
-import type { TodoItem } from "./types";
+// import { TodoItem } from "./types";
+
+type TodoItem = {};
 
 type TodosContextType = {
   todos: TodoItem[];

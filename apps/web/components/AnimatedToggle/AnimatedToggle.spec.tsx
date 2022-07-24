@@ -1,8 +1,9 @@
 import * as React from "react";
-import { render } from "@testing-library/react-native";
+import { render, screen } from "@testing-library/react";
+
 import { NativeBaseProvider } from "native-base";
 
-import Button from "./Button";
+import AnimatedToggle from "./AnimatedToggle";
 
 const inset = {
   frame: { x: 0, y: 0, width: 0, height: 0 },
@@ -10,12 +11,12 @@ const inset = {
 };
 
 it(`renders correctly`, () => {
-  const { getByText } = render(
+  render(
     <NativeBaseProvider initialWindowMetrics={inset}>
-      <Button />
+      <AnimatedToggle />
     </NativeBaseProvider>
   );
 
-  expect(getByText("NativeBaseButton")).toBeDefined();
-  expect(getByText("toggle")).toBeDefined();
+  expect(screen.getByText("Native Button")).toBeDefined();
+  expect(screen.getByText("NativeBaseButton")).toBeDefined();
 });

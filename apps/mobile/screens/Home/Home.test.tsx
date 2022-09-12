@@ -2,7 +2,7 @@ import * as React from "react";
 import { render } from "@testing-library/react-native";
 import { NativeBaseProvider } from "native-base";
 
-import Button from "./Button";
+import Home from "../Home";
 
 const inset = {
   frame: { x: 0, y: 0, width: 0, height: 0 },
@@ -12,10 +12,12 @@ const inset = {
 it(`renders correctly`, () => {
   const { getByText } = render(
     <NativeBaseProvider initialWindowMetrics={inset}>
-      <Button />
+      <Home />
     </NativeBaseProvider>
   );
 
-  expect(getByText("NativeBaseButton")).toBeDefined();
-  expect(getByText("toggle")).toBeDefined();
+  expect(getByText("Toggle with native button")).toBeDefined();
+  expect(getByText("Toggle with UI button")).toBeDefined();
+  expect(getByText("Toggle with UI button (icon)")).toBeDefined();
+  expect(getByText("Toggle with NativeBase button")).toBeDefined();
 });

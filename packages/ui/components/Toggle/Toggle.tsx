@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Button as NativeBaseButton } from "native-base";
 import Animated, {
   useSharedValue,
   withTiming,
@@ -7,8 +6,11 @@ import Animated, {
   Easing,
 } from "react-native-reanimated";
 import { View, Button } from "react-native";
+import { Button as NativeBaseButton } from "native-base";
 
-const X = () => {
+import UIButton from "../Button";
+
+const Toggle = () => {
   const randomWidth = useSharedValue(10);
 
   const config = {
@@ -22,9 +24,10 @@ const X = () => {
     };
   });
 
+  const onTogglePress = () => (randomWidth.value = Math.random() * 350);
+
   return (
     <View style={{ flex: 1 }}>
-      <NativeBaseButton>NativeBaseButton</NativeBaseButton>
       <View
         style={{
           flex: 1,
@@ -39,15 +42,20 @@ const X = () => {
             style,
           ]}
         />
-        <Button
-          title="toggle"
-          onPress={() => {
-            randomWidth.value = Math.random() * 350;
-          }}
+
+        <UIButton onPress={onTogglePress} title="Toggle with UI button" />
+        <NativeBaseButton onPress={onTogglePress}>
+          Toggle with NativeBase button
+        </NativeBaseButton>
+        <UIButton
+          leftIconName="chevron-down"
+          onPress={onTogglePress}
+          title="Toggle with UI button (icon)"
         />
+        <Button title="Toggle with native button" onPress={onTogglePress} />
       </View>
     </View>
   );
 };
 
-export default X;
+export default Toggle;

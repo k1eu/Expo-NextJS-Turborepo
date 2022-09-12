@@ -1,16 +1,12 @@
 import React from "react";
 import { NativeBaseProvider } from "native-base";
 
-import { UIButton, UISvg } from "ui";
-
-import { Button } from "./components";
+import Home from "./screens/Home";
 
 const App = () => {
   return (
     <NativeBaseProvider>
-      <Button />
-      <UISvg name="chevron-down" width={32} height={32} />
-      <UIButton title="UI button" />
+      <Home />
     </NativeBaseProvider>
   );
 };

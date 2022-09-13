@@ -23,10 +23,10 @@ type Props = {
 export const Button = (props: Props) => {
   return (
     <Pressable style={[styles.container, props.containerStyles]} {...props}>
+      <Text style={[styles.text, props.textStyle]}>{props?.title}</Text>
       {props.leftIconName ? (
         <Svg color="white" height={24} width={24} name={props.leftIconName} />
       ) : null}
-      <Text style={[styles.text, props.textStyle]}>{props?.title}</Text>
     </Pressable>
   );
 };

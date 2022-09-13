@@ -5,7 +5,7 @@ import Animated, {
   useAnimatedStyle,
   Easing,
 } from "react-native-reanimated";
-import { View, Button } from "react-native";
+import { View, Button, StyleSheet } from "react-native";
 import { Button as NativeBaseButton } from "native-base";
 
 import UIButton from "../Button";
@@ -27,35 +27,31 @@ const Toggle = () => {
   const onTogglePress = () => (randomWidth.value = Math.random() * 350);
 
   return (
-    <View style={{ flex: 1 }}>
-      <View
-        style={{
-          flex: 1,
-          alignItems: "center",
-          justifyContent: "center",
-          flexDirection: "column",
-        }}
-      >
-        <Animated.View
-          style={[
-            { width: 100, height: 80, backgroundColor: "black", margin: 30 },
-            style,
-          ]}
-        />
+    <View style={styles.container}>
+      <Animated.View style={[styles.toggle, style]} />
 
-        <UIButton onPress={onTogglePress} title="Toggle with UI button" />
-        <NativeBaseButton onPress={onTogglePress}>
-          Toggle with NativeBase button
-        </NativeBaseButton>
-        <UIButton
-          leftIconName="chevron-down"
-          onPress={onTogglePress}
-          title="Toggle with UI button (icon)"
-        />
-        <Button title="Toggle with native button" onPress={onTogglePress} />
-      </View>
+      <UIButton onPress={onTogglePress} title="Toggle with UI button" />
+      <NativeBaseButton onPress={onTogglePress}>
+        Toggle with NativeBase button
+      </NativeBaseButton>
+      <UIButton
+        leftIconName="chevron-down"
+        onPress={onTogglePress}
+        title="Toggle with UI button (icon)"
+      />
+      <Button title="Toggle with native button" onPress={onTogglePress} />
     </View>
   );
 };
 
 export default Toggle;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "column",
+  },
+  toggle: { width: 100, height: 80, backgroundColor: "black", margin: 30 },
+});
